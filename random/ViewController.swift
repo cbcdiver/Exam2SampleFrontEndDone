@@ -84,12 +84,12 @@ class ViewController: UIViewController {
         
         if asRange {
             theURL += "range/\(min)/\(max)"
-            if count != 0 {
+            if count > 1 {
                 theURL += "/\(count)"
             }
         } else {
             theURL += "default"
-            if count != 0 {
+            if count > 1 {
                 theURL += "/\(count)"
             }
         }
