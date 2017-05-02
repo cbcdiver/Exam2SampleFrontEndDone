@@ -12,6 +12,7 @@
 		838C79591EB6486A00EB8F0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838C79571EB6486A00EB8F0C /* Main.storyboard */; };
 		838C795B1EB6486A00EB8F0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 838C795A1EB6486A00EB8F0C /* Assets.xcassets */; };
 		838C795E1EB6486A00EB8F0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838C795C1EB6486A00EB8F0C /* LaunchScreen.storyboard */; };
+		83FB69541EB90ACB009AA92C /* APIInteractions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB69531EB90ACB009AA92C /* APIInteractions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		838C795A1EB6486A00EB8F0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		838C795D1EB6486A00EB8F0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		838C795F1EB6486A00EB8F0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83FB69531EB90ACB009AA92C /* APIInteractions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIInteractions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				838C79531EB6486A00EB8F0C /* AppDelegate.swift */,
 				838C79551EB6486A00EB8F0C /* ViewController.swift */,
+				83FB69531EB90ACB009AA92C /* APIInteractions.swift */,
 				838C79571EB6486A00EB8F0C /* Main.storyboard */,
 				838C795A1EB6486A00EB8F0C /* Assets.xcassets */,
 				838C795C1EB6486A00EB8F0C /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				838C79561EB6486A00EB8F0C /* ViewController.swift in Sources */,
+				83FB69541EB90ACB009AA92C /* APIInteractions.swift in Sources */,
 				838C79541EB6486A00EB8F0C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +306,7 @@
 				838C79641EB6486A00EB8F0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
