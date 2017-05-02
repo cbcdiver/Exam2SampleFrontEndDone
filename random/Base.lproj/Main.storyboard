@@ -21,13 +21,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Random Number Generator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfS-nJ-91w">
-                                <rect key="frame" x="16" y="20" width="288" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How Many Integers Do You Want?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OD-25-qYz">
                                 <rect key="frame" x="16" y="49" width="288" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -89,6 +82,13 @@
                                     <action selector="doGenerate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ggv-qb-AIn"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Random Number Generator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfS-nJ-91w">
+                                <rect key="frame" x="16" y="28" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -97,11 +97,45 @@
                         <outlet property="theCount" destination="Obr-fM-rEK" id="TKz-Ou-2zt"/>
                         <outlet property="theMax" destination="icy-je-jUA" id="QXp-7s-7xf"/>
                         <outlet property="theMin" destination="SI0-3F-lbv" id="8Hf-7X-gFT"/>
+                        <segue destination="yQ6-Bc-GEC" kind="presentation" identifier="RandomNumberSeg" id="isc-kE-OzL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="159" y="163"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dzn-RR-eda">
+            <objects>
+                <viewController id="yQ6-Bc-GEC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t4N-Ae-Zd4"/>
+                        <viewControllerLayoutGuide type="bottom" id="dmb-Is-Oea"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i79-Ot-GEt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCI-RA-NJY">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="lqe-ls-X8n">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="bst-43-9n0"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fCI-RA-NJY" secondAttribute="trailing" id="CGh-pp-Rk4"/>
+                            <constraint firstItem="fCI-RA-NJY" firstAttribute="top" secondItem="t4N-Ae-Zd4" secondAttribute="bottom" constant="8" id="btd-D1-nKa"/>
+                            <constraint firstItem="fCI-RA-NJY" firstAttribute="leading" secondItem="i79-Ot-GEt" secondAttribute="leading" id="jYY-ao-91R"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RT0-CS-7a8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="898" y="163"/>
         </scene>
     </scenes>
 </document>

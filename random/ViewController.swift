@@ -66,10 +66,11 @@ class ViewController: UIViewController {
             showAlert(errorMessage: "Please correct the following error(s): \(errors.joined(separator: ", "))")
         } else {
             if self.rangeSwitch.isOn {
-                showAlert(errorMessage: buildURLForAPICall(count: countInt!, asRange: true, min:minInt!, max:maxInt!))
+                performSegue(withIdentifier: "RandomNumberSeg", sender: self)
             } else {
-                showAlert(errorMessage: buildURLForAPICall(count: countInt!, asRange: false))
+                performSegue(withIdentifier: "RandomNumberSeg", sender: self)
             }
+            
         }
     }
     
