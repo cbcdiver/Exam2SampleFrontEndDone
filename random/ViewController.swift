@@ -15,9 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet var theMin: UITextField!
     @IBOutlet var theMax: UITextField!
     
+    var randomNumberArray:[Int]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,11 +67,29 @@ class ViewController: UIViewController {
             showAlert(errorMessage: "Please correct the following error(s): \(errors.joined(separator: ", "))")
         } else {
             if self.rangeSwitch.isOn {
-                performSegue(withIdentifier: "RandomNumberSeg", sender: self)
+                APIInteractions.getRandomNumbers(theURL: URL(string:buildURLForAPICall(count: countInt!, asRange: true, min:minInt!, max: maxInt!))!, onCompletion: { (theResult: [String:Any]?) -> () in
+                    
+                    if countInt! == 1 {
+                        self.randomNumberArray = [theResult!["number"]! as! Int]
+                    } else {
+                        self.randomNumberArray = theResult!["numbers"]! as! [Int]
+                    }
+                    DispatchQueue.main.async(execute: { () -> Void in
+                        self.performSegue(withIdentifier: "RandomNumberSeg", sender: self)
+                    })})
+                
             } else {
-                performSegue(withIdentifier: "RandomNumberSeg", sender: self)
+                APIInteractions.getRandomNumbers(theURL: URL(string:buildURLForAPICall(count: countInt!, asRange: false))!, onCompletion: { (theResult: [String:Any]?) -> () in
+                    if countInt! == 1 {
+                        self.randomNumberArray = [theResult!["number"]! as! Int]
+                    } else {
+                        self.randomNumberArray = theResult!["numbers"]! as! [Int]
+                    }
+
+                    DispatchQueue.main.async(execute: { () -> Void in
+                        self.performSegue(withIdentifier: "RandomNumberSeg", sender: self)
+                    })})
             }
-            
         }
     }
     
@@ -96,5 +115,12 @@ class ViewController: UIViewController {
         }
         
         return theURL
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RandomNumberSeg" {
+            let nextVC = segue.destination as! NumbersViewController
+            nextVC.randomNumberArray = self.randomNumberArray
+        }
     }
 }
